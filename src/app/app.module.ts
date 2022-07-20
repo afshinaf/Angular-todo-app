@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { LogoComponent } from './header/logo/logo.component';
 import { NavComponent } from './header/nav/nav.component';
 import { IconsComponent } from './header/icons/icons.component';
+import { ContainerComponent } from './container/container.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { IconsComponent } from './header/icons/icons.component';
     HeaderComponent,
     LogoComponent,
     NavComponent,
-    IconsComponent
+    IconsComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule
