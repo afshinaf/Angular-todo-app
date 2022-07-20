@@ -4,6 +4,15 @@
    License: none (public domain)
 */
 
+@font-face {
+  font-family: 'Martel Sans';
+  src: url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+}
+
+:root {
+  __black: #000;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,9 +29,10 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
+  font-family: 'Martel Sans', sans-serif;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
+  box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
