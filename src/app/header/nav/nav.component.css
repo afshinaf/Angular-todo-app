@@ -6,4 +6,23 @@
   justify-content: space-between;
 }
 
+.nav__list--item {
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+}
+
+.nav__list--link {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.nav__list--item:hover {
+  background-color: #4f79f9;
+  transition: background-color 0.3s;
+  border-radius: 0.4rem;
+}
+.nav__list--item:hover a {
+  color: #feaf01;
+}
+
 /*# sourceMappingURL=nav.component.css.map */
