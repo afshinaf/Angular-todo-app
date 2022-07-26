@@ -1,0 +1,36 @@
+.title {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.input {
+  width: 70%;
+  padding: 1rem 2rem;
+  margin: 0.8rem 0;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  font-size: 1.4rem;
+}
+
+.input:focus {
+  border: 1px solid #547cf8;
+}
+
+.form__btn {
+  width: 17%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/*# sourceMappingURL=form.component.css.map */
