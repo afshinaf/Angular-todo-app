@@ -61,4 +61,30 @@ table {
   border-spacing: 0;
 }
 
+.btn {
+  font-size: 1rem;
+  margin: 0 0 0 0.8rem;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  background-color: #feb001;
+  color: #fff;
+}
+
+.list__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5em 1.5rem;
+  margin: 0.5rem 0;
+  background-color: #fff;
+}
+
+.list__item--title {
+  align-self: center;
+  font-size: 1.2rem;
+}
+
 /*# sourceMappingURL=styles.css.map */
