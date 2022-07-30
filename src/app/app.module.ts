@@ -9,6 +9,7 @@ import { IconsComponent } from './header/icons/icons.component';
 import { ContainerComponent } from './container/container.component';
 import { FormComponent } from './form/form.component';
 import { ListComponent } from './list/list.component';
+import { ListItemComponent } from './list-item/list-item.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ListComponent } from './list/list.component';
     IconsComponent,
     ContainerComponent,
     FormComponent,
-    ListComponent
+    ListComponent,
+    ListItemComponent
   ],
   imports: [
     BrowserModule
