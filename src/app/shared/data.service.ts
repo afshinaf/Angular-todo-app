@@ -8,9 +8,14 @@ import { Todo } from './todo.model';
 export class DataService {
 
   todos: Todo[] = []
+  local = localStorage.getItem('todos');
 
   constructor() {
-    // this.todos = JSON.parse(localStorage.getItem('todos') || '');
+    if (this.local) {
+      this.todos = JSON.parse(localStorage.getItem('todos') || '');
+    }else{
+      console.log("local is empty");
+    }
    }
 
   addTodo = (todo: Todo) => {
