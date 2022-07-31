@@ -7,15 +7,16 @@ import { Todo } from './todo.model';
 })
 export class DataService {
 
-  todos: Todo[] = [
-    new Todo ('hello world', true),
-    new Todo ('hi afshin', true),
-  ]
+  todos: Todo[] = []
 
-  constructor() {  }
+  constructor() {
+    // this.todos = JSON.parse(localStorage.getItem('todos') || '');
+   }
 
-  getAllTodos = () => this.todos;
-  addTodo = (todo: Todo) => this.todos.push(todo);
+  addTodo = (todo: Todo) => {
+    this.todos.push(todo);
+    window.localStorage.setItem('todos', JSON.stringify(this.todos));
+  }
   updateTodo = (index: number, updatedTodo: Todo) => this.todos[index] = updatedTodo;
   deleteTodo = (index: number) => this.todos.splice(index, 1);
 }

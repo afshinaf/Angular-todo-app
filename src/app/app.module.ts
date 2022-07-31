@@ -8,8 +8,8 @@ import { NavComponent } from './header/nav/nav.component';
 import { IconsComponent } from './header/icons/icons.component';
 import { ContainerComponent } from './container/container.component';
 import { FormComponent } from './form/form.component';
-import { ListComponent } from './list/list.component';
 import { ListItemComponent } from './list-item/list-item.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,11 +20,11 @@ import { ListItemComponent } from './list-item/list-item.component';
     IconsComponent,
     ContainerComponent,
     FormComponent,
-    ListComponent,
     ListItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

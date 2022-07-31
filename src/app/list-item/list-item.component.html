@@ -1,1 +1,29 @@
-<p>list-item works!</p>
+<ul class="container__list">
+  <li class="container__list--item" *ngFor="let item of dataService.todos">
+    <h4 class="list__item--title"> {{item.text}}</h4>
+    <div>
+      <button class="btn edit"> <i class="fa-solid fa-pen"></i> </button>
+      <button class="btn delete"> <i class="fa-solid fa-trash-can"></i> </button>
+    </div>
+  </li>
+</ul>
+
+<!--<table id="tblDetail">-->
+
+<!--  <thead>-->
+<!--  <tr>-->
+<!--    <th width="1300px"></th>-->
+<!--    <th></th>-->
+
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--  <tr *ngFor="let item of dataService.todos">-->
+<!--    <td>{{item.text}}</td>-->
+<!--    <td class="operation">-->
+<!--&lt;!&ndash;      <button class="button" (click)="edit(item)">edit</button>&ndash;&gt;-->
+<!--&lt;!&ndash;      <button class="button" (click)="delete(item)">delete</button>&ndash;&gt;-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--  </tbody>-->
+<!--</table>-->

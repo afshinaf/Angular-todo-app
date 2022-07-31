@@ -1,23 +1,12 @@
 <h2 class="title"> Add todos </h2>
+
 <form class="form">
   <input
     type="text"
-    id="todo"
-    name="todo"
     class="form__input input"
-    placeholder="Todo..."
-    autocomplete="off"
-    (change)="getInputValue($event)">
-  <div class="form__btn">
-    <input
-      type="submit"
-      value="Add"
-      class="form__btn--submit btn"
-      (click)="addTodo($event)">
-    <input
-      type="reset"
-      value="reset"
-      class="form__btn--reset btn"
-      id="reset">
-  </div>
+    [(ngModel)]="inputValue"
+    name="todoInput"
+  >
+  <button class="form__btn--submit btn" value="Add" type="submit" name="addTodo" (click)="add()"> Add </button>
+  <button class="form__btn--submit btn" type="reset" name="resetTodo"> Reset </button>
 </form>

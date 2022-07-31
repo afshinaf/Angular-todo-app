@@ -1,3 +1,22 @@
+.container__list {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0 0 0;
+  padding: 1rem 0;
+}
 
+.container__list--item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.8rem 0.6rem;
+  background-color: #fff;
+  margin: 0.5rem 0;
+}
+
+.list__item--title {
+  align-self: center;
+  font-size: 1.4rem;
+}
 
 /*# sourceMappingURL=list-item.component.css.map */
