@@ -10,9 +10,12 @@ export class ListItemComponent implements OnInit {
 
 
   constructor(
-    public dataService:DataService
-  ) { }
+    public dataService: DataService
+  ) {
+  }
 
   ngOnInit(): void {
   }
+
+  public deleteTodo = (index: number): void => this.dataService.deleteTodo(index);
 }

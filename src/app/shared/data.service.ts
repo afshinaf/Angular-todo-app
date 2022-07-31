@@ -20,8 +20,11 @@ export class DataService {
 
   addTodo = (todo: Todo) => {
     this.todos.push(todo);
-    window.localStorage.setItem('todos', JSON.stringify(this.todos));
+    localStorage.setItem('todos', JSON.stringify(this.todos));
   }
   updateTodo = (index: number, updatedTodo: Todo) => this.todos[index] = updatedTodo;
-  deleteTodo = (index: number) => this.todos.splice(index, 1);
+  deleteTodo = (index: number) => {
+    this.todos.splice(index, 1);
+    localStorage.setItem('todos', JSON.stringify(this.todos));
+  };
 }
