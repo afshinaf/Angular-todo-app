@@ -22,9 +22,12 @@ export class DataService {
     this.todos.push(todo);
     localStorage.setItem('todos', JSON.stringify(this.todos));
   }
-  updateTodo = (index: number, updatedTodo: Todo) => this.todos[index] = updatedTodo;
+
   deleteTodo = (index: number) => {
     this.todos.splice(index, 1);
     localStorage.setItem('todos', JSON.stringify(this.todos));
   };
+
+  updateTodo = (index: number, updatedTodo: Todo) => this.todos[index] = updatedTodo;
+
 }
