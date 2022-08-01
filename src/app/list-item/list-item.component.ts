@@ -8,6 +8,7 @@ import { DataService } from '../shared/data.service';
 })
 export class ListItemComponent implements OnInit {
 
+  public todo = this.dataService.todos;
 
   constructor(
     public dataService: DataService
@@ -19,4 +20,5 @@ export class ListItemComponent implements OnInit {
 
   public deleteTodo = (index: number): void => this.dataService.deleteTodo(index);
   public editTodo = (index: number) => this.dataService.editTodo(index);
+  public completedTodo = (index: number) => this.dataService.completedTodo(index);
 }
