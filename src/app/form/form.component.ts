@@ -9,6 +9,7 @@ import { DataService } from "../shared/data.service";
 export class FormComponent implements OnInit {
 
   public inputValue: string = '';
+  public searchValue: string = '';
   constructor(
     private _dataService: DataService
   ) { }
@@ -25,5 +26,9 @@ export class FormComponent implements OnInit {
       this._dataService.addTodo(todo);
       this.inputValue = '';
     }
+  }
+
+  public search() {
+    this._dataService.searchTodo(this.searchValue);
   }
 }

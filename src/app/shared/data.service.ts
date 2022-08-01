@@ -8,17 +8,20 @@ import { Todo } from './todo.model';
 export class DataService {
 
   todos: Todo[] = []
+
+  public showTodo: Todo[] = []
   local = localStorage.getItem('todos');
 
   constructor() {
     if (this.local) {
       this.todos = JSON.parse(localStorage.getItem('todos') || '');
+      this.showTodo =this.todos;
     }else{
       console.log("local is empty");
     }
    }
 
-  addTodo = (todo: Todo) => {
+  public addTodo(todo: Todo){
     this.todos.push(todo);
     localStorage.setItem('todos', JSON.stringify(this.todos));
   }
@@ -29,12 +32,15 @@ export class DataService {
   };
 
   editTodo = (index: number) => {
-    console.log("edit todo", index);
     let title = this.todos[index].text;
     let result = prompt("Edit Task Title", title);
     if (result !== null && result !== ""){
       this.todos[index].text = result;
     }
     //todo: this function must be cleaner and better , its best that create a modal for edit todos
+  }
+
+  searchTodo = (todo: string) => {
+    this.showTodo = this.todos.filter(item => item && item.text.search(todo) !== -1);
   }
 }
