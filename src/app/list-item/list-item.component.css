@@ -29,4 +29,12 @@
   display: none;
 }
 
+.delete:hover, .block:hover {
+  background-color: #FF3D00;
+}
+
+.complete__btn:hover {
+  background-color: #64DD17;
+}
+
 /*# sourceMappingURL=list-item.component.css.map */

@@ -14,10 +14,15 @@
         <i class="fa-solid fa-trash-can"></i>
       </button>
       <button
-        class="btn delete"
+        class="btn complete__btn"
         (click)="completedTodo(number)"
         [ngClass]="{'hide': item.completed === true}">
         Completed
+      </button>
+      <button
+        class="btn block"
+        [ngClass]="{'hide': item.completed === true}">
+        Block
       </button>
     </div>
   </li>
