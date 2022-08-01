@@ -8,6 +8,26 @@
     name="todoInput"
     placeholder="Add todos..."
   >
-  <button class="form__btn--submit btn" value="Add" type="submit" name="addTodo" (click)="add()"> Add </button>
-  <button class="form__btn--submit btn" type="reset" name="resetTodo"> Reset </button>
+  <button
+    class="form__btn--submit btn"
+    value="Add" type="submit"
+    name="addTodo"
+    (click)="add()"> Add </button>
+  <button
+    class="form__btn--submit btn"
+    type="reset"
+    name="resetTodo"> Reset </button>
 </form>
+<div class="form__search">
+  <input
+    type="text"
+    placeholder="search todo..."
+    class="form__input input search"
+    [(ngModel)]="searchValue"
+    (ngModelChange)="search()"
+  >
+  <button
+    class="form__search--button"
+    name="search"
+    (click)="search()"> search</button>
+</div>
