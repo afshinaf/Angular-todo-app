@@ -2,7 +2,7 @@
   <li class="container__list--item" *ngFor="let item of dataService.todos; let number = index">
     <h4 class="list__item--title"> {{item.text}}</h4>
     <div>
-      <button class="btn edit"> <i class="fa-solid fa-pen"></i> </button>
+      <button class="btn edit" (click)="editTodo(number)"> <i class="fa-solid fa-pen"></i> </button>
       <button class="btn delete" (click)="deleteTodo(number)"> <i class="fa-solid fa-trash-can"></i> </button>
     </div>
   </li>

@@ -18,4 +18,5 @@ export class ListItemComponent implements OnInit {
   }
 
   public deleteTodo = (index: number): void => this.dataService.deleteTodo(index);
+  public editTodo = (index: number) => this.dataService.editTodo(index);
 }

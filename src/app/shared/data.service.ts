@@ -28,6 +28,13 @@ export class DataService {
     localStorage.setItem('todos', JSON.stringify(this.todos));
   };
 
-  updateTodo = (index: number, updatedTodo: Todo) => this.todos[index] = updatedTodo;
-
+  editTodo = (index: number) => {
+    console.log("edit todo", index);
+    let title = this.todos[index].text;
+    let result = prompt("Edit Task Title", title);
+    if (result !== null && result !== ""){
+      this.todos[index].text = result;
+    }
+    //todo: this function must be cleaner and better , its best that create a modal for edit todos
+  }
 }
