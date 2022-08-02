@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from "../shared/data.service";
+import { DataService } from "../shared/Services/data.service";
 
 @Component({
   selector: 'app-form',
@@ -9,7 +9,6 @@ import { DataService } from "../shared/data.service";
 export class FormComponent implements OnInit {
 
   public inputValue: string = '';
-  public searchValue: string = '';
   constructor(
     private _dataService: DataService
   ) { }
@@ -26,9 +25,5 @@ export class FormComponent implements OnInit {
       this._dataService.addTodo(todo);
       this.inputValue = '';
     }
-  }
-
-  public search() {
-    this._dataService.searchTodo(this.searchValue);
   }
 }

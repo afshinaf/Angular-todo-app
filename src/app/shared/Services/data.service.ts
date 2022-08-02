@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Todo } from './todo.model';
+import { Todo } from '../Models/todo.model';
 
 @Injectable({
   providedIn: 'root'
@@ -60,5 +60,9 @@ export class DataService {
     this.todos[index].completed = true;
     let sortedTodo = this.sortTodo(this.todos);
     localStorage.setItem('todos', JSON.stringify(sortedTodo));
+  }
+
+  blockedTodo = (index: number) => {
+    this.todos[index].blocked = true;
   }
 }

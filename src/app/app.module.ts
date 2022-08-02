@@ -10,6 +10,7 @@ import { ContainerComponent } from './container/container.component';
 import { FormComponent } from './form/form.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import {FormsModule} from "@angular/forms";
+import { SearchComponent } from './shared/Component/search/search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {FormsModule} from "@angular/forms";
     IconsComponent,
     ContainerComponent,
     FormComponent,
-    ListItemComponent
+    ListItemComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

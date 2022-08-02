@@ -29,6 +29,10 @@
   display: none;
 }
 
+.blocked {
+  background-color: #FF3D00;
+}
+
 .delete:hover, .block:hover {
   background-color: #FF3D00;
 }
