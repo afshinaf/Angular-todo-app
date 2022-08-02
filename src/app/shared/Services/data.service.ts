@@ -77,6 +77,7 @@ export class DataService {
     }else {
       this.todos[index].status = "blocked";
     }
+    localStorage.setItem('todos', JSON.stringify(this.todos));
   }
   // blockedTodo = (index: number) => this.todos[index].status === "blocked" ? this.todos[index].status = "in-progress" : this.todos[index].status = "blocked";
 }

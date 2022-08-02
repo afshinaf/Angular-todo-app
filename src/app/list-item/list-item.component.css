@@ -19,10 +19,12 @@
   color: #4d77f9;
 }
 .container__list .complete {
-  background-color: #64DD17;
+  background-color: #B1FD81;
+  border: 3px solid #64DD17;
 }
 .container__list .blocked {
-  background-color: #FF3D00;
+  background-color: #FF9E8A;
+  border: 3px solid #FF3D00;
 }
 .container__list .hide {
   display: none;
