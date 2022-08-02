@@ -4,18 +4,19 @@
   <input
     type="text"
     class="form__input input"
-    [(ngModel)]="inputValue"
+    [(ngModel)]="dataService.form.title"
     name="todoInput"
     placeholder="Add todos..."
   >
   <div class="form__buttons">
+<!--    <input type="hidden" [value]="item.id" [(ngModel)]="item.id">-->
     <button
-      class="form__btn btn"
-      value="Add" type="submit"
+      class="form__btn--add btn"
+      type="submit"
       name="addTodo"
-      (click)="add()"> Add </button>
+      (click)="add()"> {{ dataService.editForm ? "Edit" : "Add" }} </button>
     <button
-      class="form__btn btn"
+      class="form__btn--reset btn"
       type="reset"
       name="resetTodo"> Reset </button>
   </div>

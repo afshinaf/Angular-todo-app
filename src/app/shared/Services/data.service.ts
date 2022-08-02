@@ -7,10 +7,11 @@ import { Todo } from '../Models/todo.model';
 })
 export class DataService {
 
-  todos: Todo[] = []
-
+  public todos: Todo[] = []
+  public form:any = {title: '', id: null};
+  public editForm : boolean = false;
   public showTodo: Todo[] = []
-  local = localStorage.getItem('todos');
+  public local = localStorage.getItem('todos');
 
   constructor() {
     if (this.local) {
@@ -23,9 +24,9 @@ export class DataService {
 
   public sortTodo(array: Todo[]) {
     return array.sort((a:any, b: any) => {
-      if(a.completed === true && b.completed === false) {
+      if(a.status === 'completed' && b.status !== 'completed') {
         return 1;
-      }else if(a.completed === false && b.completed === true) {
+      }else if(a.status !== 'completed' && b.status === 'completed') {
         return -1;
       }else {
         return 0;
@@ -33,9 +34,19 @@ export class DataService {
     })
   }
 
-  public addTodo(todo: Todo) {
-    this.todos.push(todo);
+  public addTodo(param: Todo, id:any) {
+    if (id){
+      this.todos.forEach((item) =>{
+        if (id === item.id) {
+          item.text = param.text;
+        }
+      });
+    }else {
+      this.todos.push(param);
+    }
     localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.editForm = false;
+    // reset();
   }
 
   deleteTodo = (index: number) => {
@@ -44,11 +55,9 @@ export class DataService {
   };
 
   editTodo = (index: number) => {
-    let title = this.todos[index].text;
-    let result = prompt("Edit Task Title", title);
-    if (result !== null && result !== "") {
-      this.todos[index].text = result;
-    }
+    this.editForm = true;
+    this.form.title = this.todos[index].text;
+    this.form.id = this.todos[index].id;
     //todo: this function must be cleaner and better , its best that create a modal for edit todos
   }
 
@@ -57,12 +66,18 @@ export class DataService {
   }
 
   completedTodo = (index: number) => {
-    this.todos[index].completed = true;
+    this.todos[index].status = 'completed';
     let sortedTodo = this.sortTodo(this.todos);
     localStorage.setItem('todos', JSON.stringify(sortedTodo));
   }
 
   blockedTodo = (index: number) => {
-    this.todos[index].blocked = true;
+    if(this.todos[index].status === "blocked") {
+      this.todos[index].status = "in-progress";
+    }else {
+      this.todos[index].status = "blocked";
+    }
+    localStorage.setItem('todos', JSON.stringify(this.todos));
   }
+  // blockedTodo = (index: number) => this.todos[index].status === "blocked" ? this.todos[index].status = "in-progress" : this.todos[index].status = "blocked";
 }

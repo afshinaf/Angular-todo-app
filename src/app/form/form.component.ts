@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Todo } from '../shared/Models/todo.model';
 import { DataService } from "../shared/Services/data.service";
 
 @Component({
@@ -8,22 +9,27 @@ import { DataService } from "../shared/Services/data.service";
 })
 export class FormComponent implements OnInit {
 
-  public inputValue: string = '';
   constructor(
-    private _dataService: DataService
-  ) { }
+    public dataService: DataService
+  ) {
+  }
 
   ngOnInit(): void {
   }
+
   public add() {
     let todo: any = {
-      id: (this._dataService.todos.length + 1),
-      text: this.inputValue,
+      id: this.dataService.form.id ? this.dataService.form.id :(this.dataService.todos.length + 1), // TODO timestamp
+      text: this.dataService.form.title,
       completed: false
     }
-    if(this.inputValue) {
-      this._dataService.addTodo(todo);
-      this.inputValue = '';
+    if(this.dataService.form.title) {
+      this.dataService.addTodo(todo, this.dataService.form.id);
+      this.dataService.form.title = '';
     }
+  }
+
+  public edit () {
+    (<HTMLElement>document.querySelector('.form__btn--reset')).click();
   }
 }
