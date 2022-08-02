@@ -1,5 +1,8 @@
 <ul class="container__list">
-  <li class="container__list--item" *ngFor="let item of dataService.showTodo; let number = index" [ngClass]="{'complete': item.completed === true}">
+  <li
+    class="container__list--item"
+    *ngFor="let item of dataService.showTodo; let number = index"
+    [ngClass]="{'complete': item.completed === true, 'blocked': item.blocked === true}">
     <h4 class="list__item--title"> {{item.text}}</h4>
     <div>
       <button
@@ -14,10 +17,16 @@
         <i class="fa-solid fa-trash-can"></i>
       </button>
       <button
-        class="btn delete"
+        class="btn complete__btn"
         (click)="completedTodo(number)"
         [ngClass]="{'hide': item.completed === true}">
         Completed
+      </button>
+      <button
+        class="btn block"
+        (click)="blockTodo(number)"
+        [ngClass]="{'hide': item.completed === true}">
+        Block
       </button>
     </div>
   </li>

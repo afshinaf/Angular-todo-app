@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../shared/data.service';
+import { DataService } from '../shared/Services/data.service';
 
 @Component({
   selector: 'app-list-item',
@@ -21,4 +21,5 @@ export class ListItemComponent implements OnInit {
   public deleteTodo = (index: number): void => this.dataService.deleteTodo(index);
   public editTodo = (index: number) => this.dataService.editTodo(index);
   public completedTodo = (index: number) => this.dataService.completedTodo(index);
+  public blockTodo = (index: number) => this.dataService.blockedTodo(index);
 }

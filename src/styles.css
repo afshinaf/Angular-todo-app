@@ -72,4 +72,23 @@ table {
   color: #fff;
 }
 
+.input {
+  width: 70%;
+  padding: 1rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4d77f9;
+}
+.input::placeholder {
+  color: #4f79f9;
+  opacity: 0.8;
+}
+
+.input:focus {
+  border: 1px solid #547cf8;
+}
+
 /*# sourceMappingURL=styles.css.map */
