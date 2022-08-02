@@ -1,0 +1,15 @@
+.form__search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+  margin: 1.4rem auto;
+  .search {
+    display: block;
+    width: 70%;
+  }
+  .form__search--button {
+    background-color: #4f79f9;
+    margin: 0 !important;
+  }
+}

@@ -1,0 +1,13 @@
+<div class="form__search">
+  <input
+    type="text"
+    placeholder="search todo..."
+    class="form__input input search"
+    [(ngModel)]="searchValue"
+    (ngModelChange)="search()"
+  >
+  <button
+    class="form__search--button btn"
+    name="search"
+    (click)="search()"> search</button>
+</div>

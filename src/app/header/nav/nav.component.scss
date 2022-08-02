@@ -1,26 +1,22 @@
 .header__nav--list {
   display: flex;
-  display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-}
-
-.nav__list--item {
-  padding: .8rem 1.2rem;
-  cursor: pointer;
-}
-
-.nav__list--link {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.nav__list--item:hover {
-  background-color: #4f79f9;
-  transition: background-color .3s;
-  border-radius: .4rem;
-  a {
-    color: #feaf01;
+  .nav__list--item {
+    padding: .8rem 1.2rem;
+    cursor: pointer;
+    .nav__list--link {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+    &:hover {
+      background-color: #4f79f9;
+      transition: background-color .3s;
+      border-radius: .4rem;
+      a {
+        color: #feaf01;
+      }
+    }
   }
 }
