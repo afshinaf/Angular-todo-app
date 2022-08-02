@@ -1,24 +1,17 @@
 .form__search {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   width: 50%;
   margin: 1.4rem auto;
 }
-
-.search {
+.form__search .search {
   display: block;
   width: 70%;
 }
-
-.form__search--button {
-  width: 15%;
-  justify-content: center;
+.form__search .form__search--button {
   background-color: #4f79f9;
-  color: #fff;
-  border: none;
-  border-radius: 0.4rem;
-  padding: 0.8rem 0.2rem;
-  cursor: pointer;
+  margin: 0 !important;
 }
 
 /*# sourceMappingURL=search.component.css.map */

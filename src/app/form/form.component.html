@@ -8,13 +8,15 @@
     name="todoInput"
     placeholder="Add todos..."
   >
-  <button
-    class="form__btn--submit btn"
-    value="Add" type="submit"
-    name="addTodo"
-    (click)="add()"> Add </button>
-  <button
-    class="form__btn--submit btn"
-    type="reset"
-    name="resetTodo"> Reset </button>
+  <div class="form__buttons">
+    <button
+      class="form__btn btn"
+      value="Add" type="submit"
+      name="addTodo"
+      (click)="add()"> Add </button>
+    <button
+      class="form__btn btn"
+      type="reset"
+      name="resetTodo"> Reset </button>
+  </div>
 </form>
