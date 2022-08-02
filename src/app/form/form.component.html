@@ -18,16 +18,3 @@
     type="reset"
     name="resetTodo"> Reset </button>
 </form>
-<div class="form__search">
-  <input
-    type="text"
-    placeholder="search todo..."
-    class="form__input input search"
-    [(ngModel)]="searchValue"
-    (ngModelChange)="search()"
-  >
-  <button
-    class="form__search--button"
-    name="search"
-    (click)="search()"> search</button>
-</div>
