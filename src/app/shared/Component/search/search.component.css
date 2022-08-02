@@ -1,0 +1,24 @@
+.form__search {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin: 1.4rem auto;
+}
+
+.search {
+  display: block;
+  width: 70%;
+}
+
+.form__search--button {
+  width: 15%;
+  justify-content: center;
+  background-color: #4f79f9;
+  color: #fff;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.8rem 0.2rem;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=search.component.css.map */
