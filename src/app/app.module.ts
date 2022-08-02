@@ -11,6 +11,7 @@ import { FormComponent } from './form/form.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import {FormsModule} from "@angular/forms";
 import { SearchComponent } from './shared/Component/search/search.component';
+import { SortComponent } from './shared/Component/sort/sort.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SearchComponent } from './shared/Component/search/search.component';
     ContainerComponent,
     FormComponent,
     ListItemComponent,
-    SearchComponent
+    SearchComponent,
+    SortComponent
   ],
   imports: [
     BrowserModule,
