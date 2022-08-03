@@ -41,7 +41,6 @@ export class DataService {
   public addTodo(param: Todo, id:any) {
     console.log("add 1", param, id);
     if (id){
-      console.log("add 2")
       this.todos.forEach((item) =>{
         console.log("add 3")
         if (id === item.id) {
@@ -50,7 +49,6 @@ export class DataService {
         }
       });
     }else {
-      console.log("add 5")
       this.todos.push(param);
     }
     console.log("add 6")

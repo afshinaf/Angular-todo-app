@@ -17,9 +17,15 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public generateId() {
+    let uniqueId = new Date().getTime();
+    return uniqueId;
+  }
+
   public add() {
+    this.generateId();
     let todo: any = {
-      id: this.dataService.form.id ? this.dataService.form.id :(this.dataService.todos.length + 1), // TODO timestamp
+      id: this.dataService.form.id ? this.dataService.form.id :(this.generateId()), // TODO timestamp
       text: this.dataService.form.title,
       completed: false
     }
