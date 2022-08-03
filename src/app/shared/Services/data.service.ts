@@ -22,6 +22,10 @@ export class DataService {
     }
   }
 
+  public setToLocalStorage(key: string, value: any) {
+    localStorage.setItem(key, JSON.stringify(value));
+  }
+
   public sortTodo(array: Todo[]) {
     return array.sort((a:any, b: any) => {
       if(a.status === 'completed' && b.status !== 'completed') {
@@ -35,23 +39,29 @@ export class DataService {
   }
 
   public addTodo(param: Todo, id:any) {
+    console.log("add 1", param, id);
     if (id){
+      console.log("add 2")
       this.todos.forEach((item) =>{
+        console.log("add 3")
         if (id === item.id) {
           item.text = param.text;
+          console.log("add 4")
         }
       });
     }else {
+      console.log("add 5")
       this.todos.push(param);
     }
-    localStorage.setItem('todos', JSON.stringify(this.todos));
+    console.log("add 6")
+    this.setToLocalStorage('todos', this.todos);
     this.editForm = false;
     // reset();
   }
 
   deleteTodo = (index: number) => {
     this.todos.splice(index, 1);
-    localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.setToLocalStorage('todos', this.todos)
   };
 
   editTodo = (index: number) => {
@@ -68,7 +78,7 @@ export class DataService {
   completedTodo = (index: number) => {
     this.todos[index].status = 'completed';
     let sortedTodo = this.sortTodo(this.todos);
-    localStorage.setItem('todos', JSON.stringify(sortedTodo));
+    this.setToLocalStorage('todos', sortedTodo);
   }
 
   blockedTodo = (index: number) => {
@@ -77,7 +87,7 @@ export class DataService {
     }else {
       this.todos[index].status = "blocked";
     }
-    localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.setToLocalStorage('todos', this.todos);
   }
   // blockedTodo = (index: number) => this.todos[index].status === "blocked" ? this.todos[index].status = "in-progress" : this.todos[index].status = "blocked";
 }
