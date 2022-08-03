@@ -27,15 +27,24 @@ export class DataService {
   }
 
   public sortTodo(array: Todo[]) {
-    return array.sort((a:any, b: any) => {
-      if(a.status === 'completed' && b.status !== 'completed') {
+    let sortedTodoByAlphabet = array.sort((a: any, b: any) => {
+      if(a.text > b.text) {
         return 1;
-      }else if(a.status !== 'completed' && b.status === 'completed') {
+      }else if (a.text < b.text) {
         return -1;
       }else {
         return 0;
       }
     })
+    return sortedTodoByAlphabet.sort((first: any, second: any) => {
+      if(first.status === 'completed' && second.status !== 'completed') {
+        return 1;
+      }else if (first.status !== 'completed' && second.status === 'completed') {
+        return -1;
+      }else {
+        return 0;
+      }
+    });
   }
 
   public addTodo(param: Todo, id:any) {
@@ -51,8 +60,8 @@ export class DataService {
     }else {
       this.todos.push(param);
     }
-    console.log("add 6")
-    this.setToLocalStorage('todos', this.todos);
+    let sortedTodo = this.sortTodo(this.todos);
+    this.setToLocalStorage('todos', sortedTodo);
     this.editForm = false;
     // reset();
   }
