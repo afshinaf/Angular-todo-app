@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from "../../Services/data.service";
 
 @Component({
   selector: 'app-sort',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SortComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dataService: DataService
+  ) {
+  }
 
   ngOnInit(): void {
   }
 
+  onSelectSortType(): void {
+    this.dataService.todos = this.dataService.sortTodo( this.dataService.todos, this.dataService.sortType );
+  }
 }

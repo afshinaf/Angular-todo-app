@@ -12,6 +12,8 @@ export class DataService {
   public editForm : boolean = false;
   public showTodo: Todo[] = []
   public local = localStorage.getItem('todos');
+  public sortType:string = '';
+
 
   constructor() {
     if (this.local) {
@@ -26,42 +28,41 @@ export class DataService {
     localStorage.setItem(key, JSON.stringify(value));
   }
 
-  public sortTodo(array: Todo[]) {
-    let sortedTodoByAlphabet = array.sort((a: any, b: any) => {
-      if(a.text > b.text) {
-        return 1;
-      }else if (a.text < b.text) {
-        return -1;
-      }else {
-        return 0;
-      }
-    })
-    return sortedTodoByAlphabet.sort((first: any, second: any) => {
-      if(first.status === 'completed' && second.status !== 'completed') {
-        return 1;
-      }else if (first.status !== 'completed' && second.status === 'completed') {
-        return -1;
-      }else {
-        return 0;
-      }
-    });
+  public sortTodo(array: Todo[], type: any) {
+
+    if (type === 'both'){
+      this.sortTodo(this.todos, 'text');
+      this.sortTodo(this.todos, 'status');
+      return this.todos;
+    } else{
+      return array.sort((first: any, second: any) => {
+        if(first[type] > second[type]) {
+          return 1;
+        }else if (first[type] < second[type]) {
+          return -1;
+        }else {
+          return 0;
+        }
+      });
+    }
+
   }
 
   public addTodo(param: Todo, id:any) {
-    console.log("add 1", param, id);
     if (id){
       this.todos.forEach((item) =>{
-        console.log("add 3")
         if (id === item.id) {
           item.text = param.text;
-          console.log("add 4")
         }
       });
+      this.form.id = '';
     }else {
       this.todos.push(param);
     }
-    let sortedTodo = this.sortTodo(this.todos);
-    this.setToLocalStorage('todos', sortedTodo);
+
+    this.todos = this.sortTodo(this.todos, this.sortType);
+    console.log('this.todos', this.todos);
+    this.setToLocalStorage('todos', this.todos);
     this.editForm = false;
     // reset();
   }
@@ -83,16 +84,16 @@ export class DataService {
   }
 
   completedTodo = (index: number) => {
-    this.todos[index].status = 'completed';
-    let sortedTodo = this.sortTodo(this.todos);
-    this.setToLocalStorage('todos', sortedTodo);
+    this.todos[index].status = 3;
+    this.todos = this.sortTodo(this.todos, this.sortType);
+    this.setToLocalStorage('todos', this.todos);
   }
 
   blockedTodo = (index: number) => {
-    if(this.todos[index].status === "blocked") {
-      this.todos[index].status = "in-progress";
+    if(this.todos[index].status === 2) {
+      this.todos[index].status = 1;
     }else {
-      this.todos[index].status = "blocked";
+      this.todos[index].status = 2;
     }
     this.setToLocalStorage('todos', this.todos);
   }
