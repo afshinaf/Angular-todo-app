@@ -1,14 +1,26 @@
 <div class="sort">
   <label class="sort__label" for="sortTodo"> Sort by:</label>
   <select
+    #type
+    (change)="onSelectSortType()"
     class="sort__select"
     name="sortTodo"
+    [(ngModel)]="dataService.sortType"
     id="sortTodo">
-    <option value="alphabet" class="sort__select--option">
+    <option
+      value="text"
+      class="sort__select--option">
       alphabet
     </option>
-    <option value="afshin" class="sort__select--option">
-      Afshin
+    <option
+      value="status"
+      class="sort__select--option">
+      status
+    </option>
+    <option
+      value="both"
+      class="sort__select--option">
+      both
     </option>
   </select>
 </div>

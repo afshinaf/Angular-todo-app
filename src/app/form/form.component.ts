@@ -27,7 +27,7 @@ export class FormComponent implements OnInit {
     let todo: any = {
       id: this.dataService.form.id ? this.dataService.form.id :(this.generateId()), // TODO timestamp
       text: this.dataService.form.title,
-      completed: false
+      status: 0
     }
     if(this.dataService.form.title) {
       this.dataService.addTodo(todo, this.dataService.form.id);
